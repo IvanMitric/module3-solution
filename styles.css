@@ -1,46 +1,81 @@
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body {
-  margin: 0;
   font-family: Arial, sans-serif;
+  padding: 20px;
 }
-.text-center {
+
+h1 {
   text-align: center;
-  margin: 30px 0;
   font-size: 2em;
+  margin-bottom: 30px;
 }
 
-.row {
-  overflow: hidden;
-  padding: 0 10px;
-}
-
+/* General section styling */
 .section {
-  background: #f0f0f0;
+  background-color: #e0e0e0; /* siva pozadina */
   border: 1px solid black;
   padding: 20px;
-  margin: 10px 0;
+  margin: 10px;
   position: relative;
   float: left;
   width: 100%;
 }
+
 .section-title {
   position: absolute;
   top: 0;
   right: 0;
-  background: #ffcc00;
-  border: 1px solid black;
   padding: 5px 10px;
+  border: 1px solid black;
   font-size: 1.25em;
+  background-color: #ccc; /* privremeno siva – biće pregažena ispod */
 }
 
-/* TABLET: 2 + 1 */
-@media (min-width: 768px) and (max-width: 991px) {
-  .section { width: 50%; }
-  #sushi { width: 100%; }
+/* Individual section title colors */
+.chicken {
+  background-color: #ff9999; /* svetlo crvena */
 }
 
-/* DESKTOP: 3 in a row */
+.beef {
+  background-color: #99ff99; /* svetlo zelena */
+}
+
+.sushi {
+  background-color: #9999ff; /* svetlo plava */
+}
+
+/* Desktop: 3 sekcije u jednom redu */
 @media (min-width: 992px) {
-  .section { width: 33.33%; }
+  .section {
+    width: 30%;
+    margin: 1.66%;
+    height: 250px;
+  }
+}
+
+/* Tablet: 2 gore, 1 dole */
+@media (min-width: 768px) and (max-width: 991px) {
+  .section {
+    width: 47%;
+    margin: 1.5%;
+    height: 250px;
+  }
+
+  .section:nth-child(3) {
+    width: 96%;
+  }
+}
+
+/* Mobile: sve 3 jedna ispod druge */
+@media (max-width: 767px) {
+  .section {
+    width: 100%;
+    margin-bottom: 20px;
+    height: auto;
+  }
 }
